@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head') %>
+  <body>
+    <%- include ('./partials/header') %>
+    <div class="w-auth">
+      <div>
+        <p class="mb">Sign up to shorten your urls and save them</p>
+      </div>
+      <form action="/signup" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Your email" value="<%=
+        oldData ? oldData.email : "" %>"/> <% if (errors && errors.email) { %>
+        <p class="error-msg"><%= errors.email.msg %></p>
+        <% } %>
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Your password" />
+        <% if (errors && errors.password) { %>
+        <p class="error-msg"><%= errors.password.msg %></p>
+        <% } %>
+        <label for="confirmPassword">Confirm password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm your password"
+        />
+        <% if (errors && errors.confirmPassword) { %>
+        <p class="error-msg"><%= errors.confirmPassword.msg %></p>
+        <% } %>
+        <button class="b-mt button">Sign up</button>
+      </form>
+      <div class="n-ac">
+        <p>You have an account?</p>
+        <a href="/signin">Sign in</a>
+      </div>
+    </div>
+  </body>
+</html>

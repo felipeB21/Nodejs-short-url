@@ -1,0 +1,22 @@
+<main class="w-main">
+  <div>
+    <form action="/" method="post">
+      <label for="url">Url</label>
+      <div class="flex">
+        <input type="url" name="url" placeholder="ex: https://pinkieurl.com" />
+        <button class="button">Send</button>
+      </div>
+    </form>
+
+    <% if (urls) { %>
+    <ul class="mt-40 flex-col">
+      <% for (const url of urls) { %>
+      <li class="flex">
+        <h2 class="title">Full URL: <%= url.full_url %></h2>
+        <h2 class="title">Short URL: <%= url.short_url %></h2>
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+  </div>
+</main>

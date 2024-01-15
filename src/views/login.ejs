@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head') %>
+  <body>
+    <%- include ('./partials/header') %>
+    <div class="w-auth">
+      <div>
+        <p class="mb">Sign in to shorten your urls and save them</p>
+      </div>
+      <form action="/signin" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Your email" />
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Your password" />
+        <button class="b-mt button">Sign in</button>
+      </form>
+      <div class="n-ac">
+        <p>Don't have an account?</p>
+        <a href="/signup">Sign up</a>
+      </div>
+    </div>
+  </body>
+</html>
